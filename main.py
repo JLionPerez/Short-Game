@@ -28,25 +28,38 @@ def battle():
     # aiChoice = random.choice(choices)
     playerPoints = 0
     aiPoints = 0
-    
+
     while True:
-        # if playerPoints == 3:
-        #     print("Player wins!")
-        # if aiPoints == 3:
-        #     print("AI wins!")
+        if playerPoints == 3:
+            print("Player wins!")
+            break
+        if aiPoints == 3:
+            print("AI wins!")
+            break
+
         playerChoice = playerMove()
         aiChoice = random.choice(choices)
+
+        print("Player chose " + playerChoice +
+              " and Enemy chose " + aiChoice + ".")
 
         if playerChoice == aiChoice:
             print("It's a tie! No one gets points, keep playing!")
         elif playerChoice == "rock" and aiChoice == "scissors":
+            print("Player won a point!")
             playerPoints += 1
         elif playerChoice == "scissors" and aiChoice == "paper":
+            print("Player won a point!")
             playerPoints += 1
         elif playerChoice == "paper" and aiChoice == "rock":
+            print("Player won a point!")
             playerPoints += 1
         else:
+            print("Enemy won a point!")
             aiPoints += 1
+
+        print("Player points: " + str(playerPoints) +
+              ", Enemy points: " + str(aiPoints))
 
 
 def main():
