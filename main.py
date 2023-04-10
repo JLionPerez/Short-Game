@@ -1,7 +1,6 @@
 # import difflib
 import random
 
-
 # global variables
 choices = ["rock", "paper", "scissors"]
 
